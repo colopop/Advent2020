@@ -17,8 +17,6 @@ def move(direction, dist):
         return (0, -1*dist)
 
 for d in inp:
-    print(d)
-    print(distance)
     if d[0] == 'F':
         d = (degrees_to_dir[facing], d[1])
     if d[0] == 'L':

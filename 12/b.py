@@ -2,9 +2,7 @@ with open("input.txt") as inp:
     inp = [(line.strip()[0], int(line.strip()[1:])) for line in inp.readlines()]
 
 wp = (10,1)
-loc = (0,0)
-
-degrees_to_dir = {0 : 'E', 90 : 'N', 180: 'W', 270 : 'S'}
+loc = (0,0)  
 
 def move(direction, dist):
     if direction == 'E':
