@@ -1,12 +1,18 @@
 with open("input.txt") as inp:
     ages = [int(num)for num in inp.readline().split(',')]
 
+seed = ages[-1]
+ages = ages[:-1]
+ages = {num : idx for idx,num in enumerate(ages)}
 
-for i in range(2020-7):
-    print(ages[-1])
-    if ages[-1] in ages[:-1]:
-        ages.append(list(reversed(ages[:-1])).index(ages[-1])+1)
+for i in range(6,2020):
+    old_seed = seed
+    if seed in ages:
+        new_seed = i - ages[seed]
+        ages[seed] = i
+        seed = new_seed
     else:
-        ages.append(0)
+        ages[seed] = i
+        seed = 0
 
-print(ages[-1])
+print(old_seed)
